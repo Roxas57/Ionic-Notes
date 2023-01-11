@@ -34,8 +34,8 @@ export class EditPage implements OnInit {
         title :[this.data.title,[Validators.required,
                     Validators.minLength(5)]],
         description : [this.data.description],
-        foto : [this.data.foto]
       })
+      this.imgUrl=this.data.foto.toString();
     }
   }
 
@@ -47,7 +47,7 @@ export class EditPage implements OnInit {
         await this.noteS.addNote({
           title:this.todo.get('title').value,
           description:this.todo.get('description').value,
-          foto:this.todo.get('foto').value
+          //foto:this.todo.get('foto').value
         });
         this.todo.reset("");
         this.uiS.showToast("¡Nota insertada correctamente!");
@@ -56,7 +56,7 @@ export class EditPage implements OnInit {
           {id:this.data.id,
            title:this.todo.get('title').value,
            description:this.todo.get('description').value,
-           foto:this.todo.get('foto').value
+           foto:this.imgUrl
           }
         );
         this.uiS.showToast("¡Nota actualizada correctamente!");

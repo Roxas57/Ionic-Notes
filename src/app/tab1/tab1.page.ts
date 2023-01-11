@@ -56,7 +56,7 @@ export class Tab1Page implements OnInit {
   }
   public async loadNotes(event){
     this.notes = await this.noteS.getNotes(true);
-    //event.target.complete();
+    event.target.complete();
    // (this.infinitescroll.nativeElement as IonInfiniteScroll).disabled=false;
   }
   public async loadMoreNotes(event){
